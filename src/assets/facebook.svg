@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="78" height="78" viewBox="0 0 78 78">
+  <defs>
+    <filter id="Ellipse_73" x="0" y="0" width="78" height="78" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_194" data-name="Group 194" transform="translate(15 15.371)">
+    <g transform="matrix(1, 0, 0, 1, -15, -15.37)" filter="url(#Ellipse_73)">
+      <circle id="Ellipse_73-2" data-name="Ellipse 73" cx="24" cy="24" r="24" transform="translate(15 15)" fill="#fff"/>
+    </g>
+    <g id="Twitter_Logo" data-name="Twitter Logo" transform="translate(15.426 10.542)">
+      <g id="Group_51" data-name="Group 51">
+        <g id="g10">
+          <g id="g12">
+            <path id="path16" d="M24.525-9.321l.869-4.768H19.955v-3.094c0-1.3.76-2.576,3.2-2.576h2.473v-4.059a35.7,35.7,0,0,0-4.39-.322c-4.48,0-7.407,2.283-7.407,6.417v3.634H8.848v4.768h4.979V2.205a23.419,23.419,0,0,0,3.064.2,23.419,23.419,0,0,0,3.064-.2V-9.321h4.57" transform="translate(-8.848 24.141)" fill="#1877f2"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
