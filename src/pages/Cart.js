@@ -34,7 +34,7 @@ function Cart() {
 
               <div className=" font-poppins flex items-center justify-between border-b-[1px] border-b-gray-400 py-3">
                 <h2 className=" text-2xl font-medium">Shopping Cart</h2>
-                <h4 className=" text-xl hidden lg:flex font-normal">Subtile</h4>
+                <h4 className=" text-xl hidden md:flex font-normal">Subtile</h4>
               </div>
               {/* product start her  */}
               <div>
@@ -127,7 +127,7 @@ function Cart() {
             initial={{ y: 70, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="flex justify-center items-center gap-4 py-10"
+            className="flex  justify-center items-center gap-4 py-10"
           >
             <div>
               <img

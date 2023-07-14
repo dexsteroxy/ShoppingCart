@@ -7,16 +7,17 @@ function Header() {
   const [showAll, setShowAll] = useState(false);
 
   const products = useSelector((state) => state.amazonReducer.products);
+  const userInfo = useSelector((state) => state.amazonReducer.userInfo);
 
   return (
     <div className=" w-full sticky top-0 z-50">
       <div className=" w-full bg-amazon_blue text-white px-4 py-3 flex items-center gap-4">
         {/* =====image start here====== */}
-       <Link to='/'>
-       <div className=" px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer transition-all duration-300">
-          <img className=" w-24 mt-" src={amazonLogo} alt="logo"></img>
-        </div>
-       </Link>
+        <Link to="/">
+          <div className=" px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer transition-all duration-300">
+            <img className=" w-24 mt-" src={amazonLogo} alt="logo"></img>
+          </div>
+        </Link>
 
         {/* =====image end here====== */}
 
@@ -176,9 +177,20 @@ function Header() {
 
         <Link to="/signin">
           <div className="  flex flex-col items-start justify-center headerHover">
-            <p className="text-sm mdl:text-xs text-white mdl:text-lightText font-light">
-              <span className="mdl:inline-flex hidden">Hello</span>sign..in
-            </p>
+            {userInfo ? (
+              
+                
+                <p className="text-sm mdl:text-sm text-gray-100 mdl:text-gray-100 font-medium">
+                  {userInfo.userName}
+                
+                </p>
+            
+            ) : (
+              <p className="text-sm mdl:text-xs text-white mdl:text-lightText font-light">
+                <span className="mdl:inline-flex hidden">Hello</span>sign..in
+              </p>
+            )}
+
             <p className="text-sm font-semibold -mt-1 text-whiteText hidden mdl:inline-flex">
               Accounts & lists
               <span>
@@ -200,18 +212,18 @@ function Header() {
 
         {/* =====cart start here====== */}
 
-       <Link to='/cart'>
-       <div className=" flex  items-start justify-center headerHover relative">
-          <i className="fa-solid fa-cart-shopping"></i>
-          <p className=" text-xs font-semibold mt-3 text-whiteText ">
-            Cart{" "}
-            <span className=" absolute text-xs top-0 left-6 font-semibold p-1 h-4 bg-[#f3a847] text-amazon_blue rounded-full flex justify-center items-center animate-bounce">
-              {" "}
-            {products.length > 0 ?products.length:0}
-            </span>
-          </p>
-        </div>
-       </Link>
+        <Link to="/cart">
+          <div className=" flex  items-start justify-center headerHover relative">
+            <i className="fa-solid fa-cart-shopping"></i>
+            <p className=" text-xs font-semibold mt-3 text-whiteText ">
+              Cart{" "}
+              <span className=" absolute text-xs top-0 left-6 font-semibold p-1 h-4 bg-[#f3a847] text-amazon_blue rounded-full flex justify-center items-center animate-bounce">
+                {" "}
+                {products.length > 0 ? products.length : 0}
+              </span>
+            </p>
+          </div>
+        </Link>
 
         {/* =====cart end here====== */}
       </div>

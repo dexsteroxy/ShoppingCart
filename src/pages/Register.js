@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 import amazonLogo from "../assets/amazonLogo.png";
-import { Link } from "react-router-dom";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+import { Link, useNavigate } from "react-router-dom";
+import { RotatingLines } from "react-loader-spinner";
+import { motion } from "framer-motion";
 function Register() {
+  const navigate = useNavigate();
+  const auth = getAuth();
   const [clientName, setClientName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,6 +22,10 @@ function Register() {
   const [errEmail, setErrEmail] = useState("");
   const [errPassword, setErrPassword] = useState("");
   const [errCPassword, setErrCPassword] = useState("");
+  const [firebaseErr, setFirebaseErr] = useState("");
+  //loading function start
+  const [loading, setLoading] = useState(false);
+  const [successMsg, setSuccessMsg] = useState("");
 
   // handle function start
   const handleName = (e) => {
@@ -36,9 +49,9 @@ function Register() {
   };
 
   //email validation start
-  const emailValidation=(email)=>{
-return String(email).toLowerCase().match("@gmail.com");
-  }
+  const emailValidation = (email) => {
+    return String(email).toLowerCase().match("@gmail.com");
+  };
 
   //submit button start here
 
@@ -49,9 +62,10 @@ return String(email).toLowerCase().match("@gmail.com");
     }
     if (!email) {
       setErrEmail("Email is required");
+      setFirebaseErr("");
     } else {
       if (!emailValidation(email)) {
-        setErrEmail("Enter a valid email")
+        setErrEmail("Enter a valid email");
       }
     }
 
@@ -71,17 +85,47 @@ return String(email).toLowerCase().match("@gmail.com");
       }
     }
 
-
-if (clientName && email && emailValidation(email) && password && password.length >=5 && cpassword && cpassword === password) {
-  console.log(clientName,email,password,cpassword)
-  setClientName("")
-  setEmail("")
-  setPassword("")
-  setCPassword("")
- setErrCPassword("")
-}
-
-
+    if (
+      clientName &&
+      email &&
+      emailValidation(email) &&
+      password &&
+      password.length >= 5 &&
+      cpassword &&
+      cpassword === password
+    ) {
+      setLoading(true);
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          updateProfile(auth.currentUser, {
+            displayName: clientName,
+            photoURL: "7515495b-982d-44d2-9931-5a8bbbf27532",
+          });
+          //signed in
+          const user = userCredential.user;
+          
+          setLoading(false);
+          setSuccessMsg("Account Created Successfully!");
+          setTimeout(() => {
+            navigate("/signin");
+          }, 3000);
+          // ..........
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          if (errorCode.includes("auth/email-already-in-use")) {
+            setFirebaseErr("Email is already in use please");
+          }
+          //...
+        });
+      // ==============firebase end here==================
+      setClientName("");
+      setEmail("");
+      setPassword("");
+      setCPassword("");
+      setErrCPassword("");
+      setFirebaseErr("");
+    }
   };
 
   return (
@@ -121,6 +165,12 @@ if (clientName && email && emailValidation(email) && password && password.length
                 {errEmail && (
                   <p className=" text-red-600 text-xs font-semibold tracking-wide flex items-center gap-2 -mt-1.5">
                     {errEmail}
+                  </p>
+                )}
+
+                {firebaseErr && (
+                  <p className=" text-red-600 text-xs font-semibold tracking-wide flex items-center gap-2 -mt-1.5">
+                    {firebaseErr}
                   </p>
                 )}
               </div>
@@ -163,6 +213,29 @@ if (clientName && email && emailValidation(email) && password && password.length
               >
                 Continue
               </button>
+              {loading && (
+                <div className=" flex justify-center">
+                  <RotatingLines
+                    strokeColor="#febd69"
+                    strokeWidth="5"
+                    animationDuration="0.75"
+                    width="50"
+                    visible={true}
+                  />
+                </div>
+              )}
+              {successMsg && (
+                <div>
+                  <motion.p
+                    initial={{ y: 10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className=" text-base font-poppins font-semibold text-green-500 border-[1px] border-green-500 px-2 text-center"
+                  >
+                    {successMsg}
+                  </motion.p>
+                </div>
+              )}
             </div>
             <p className=" text-xs text-black leading-4 mt-4">
               By continuing, you agree to Amazon's{" "}

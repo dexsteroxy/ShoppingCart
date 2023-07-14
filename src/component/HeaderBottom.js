@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import SideNavContent from "./SideNavContent";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
 
 function HeaderBottom() {
   const [sidebar, setSidebar] = useState(false);
+  const userInfo = useSelector((state) => state.amazonReducer.userInfo);
   return (
     <div className=" w-full px-4 h-[36px] bg-amazon_light text-white flex items-center ">
       {/* =========listitems start here ========== */}
@@ -17,7 +19,9 @@ function HeaderBottom() {
           <i className="fa-solid fa-bars"></i> All
         </li>
         <li className=" headerHover hidden md:inline-flex">Today's Deals</li>
-        <li className=" headerHover hidden md:inline-flex">Customer Services</li>
+        <li className=" headerHover hidden md:inline-flex">
+          Customer Services
+        </li>
         <li className=" headerHover hidden md:inline-flex">Gift Cards</li>
         <li className=" headerHover hidden md:inline-flex">Registry</li>
         <li className=" headerHover hidden md:inline-flex">Sell</li>
@@ -37,10 +41,25 @@ function HeaderBottom() {
               className=" w-[80%] md:w-[350px]  h-full bg-white border border-black"
             >
               <div className=" w-full bg-amazon_light text-white py-2 px-6 flex items-center gap-4">
-                <i className="fa-solid fa-user"></i>
-                <h3 className=" font-poppins font-bold text-lg tracking-wide">
-                  Hello, Sign In
-                </h3>
+                {userInfo ? (
+                  <img
+                    className="w-10 h-10 rounded-full"
+                    src={userInfo.image}
+                    alt=""
+                  />
+                ) : (
+                  <i className="fa-solid fa-user"></i>
+                )}
+
+             {
+              userInfo ?    <h3 className=" font-poppins font-bold text-lg tracking-wide">
+              {userInfo.userName}
+            </h3> : (
+                 <h3 className=" font-poppins font-bold text-lg tracking-wide">
+                 Hello, Sign In
+               </h3>
+            )
+             }
               </div>
               <SideNavContent
                 title="Digital Content & Devices"
@@ -79,7 +98,6 @@ function HeaderBottom() {
         </div>
       )}
       {/* =========sideNav end here ========== */}
-      
     </div>
   );
 }

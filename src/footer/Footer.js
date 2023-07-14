@@ -11,7 +11,7 @@ function Footer() {
     <footer className=" bg-amazon_blue">
       <div className="md:container mt-4 pt-16 flex flex-col-reverse justify-between md:px-6 px-3 py-10 md:mx-auto space-y-8 md:flex-row md:space-y-0">
         <div className="flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:space-y-0 md:items-start">
-          <div className=" text-lala md:hidden mt-6">
+          <div className=" text-gray-300 md:hidden mt-6">
             Copyright &copy; 2023, | All Right Reserved
           </div>
 
@@ -30,7 +30,7 @@ function Footer() {
           <div className="flex flex-col space-y-3 text-lala text-[16px]">
             <h4 className=" mb-3 text-gray-300 font-semibold">COMPANY</h4>
             <a
-              href="https://www.linkedin.com/feed/"
+              href="#"
               target="blank"
               className="  text-lala hover:text-white text-gray-300 transition-all duration-300"
             >
@@ -38,7 +38,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://www.linkedin.com/feed/"
+              href="#"
               target="blank"
               className=" hover:text-white text-gray-300 transition-all duration-300"
             >
@@ -46,7 +46,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://www.linkedin.com/feed/"
+              href="#"
               target="blank"
               className=" hover:text-white text-gray-300 transition-all duration-300"
             >
@@ -54,7 +54,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://www.linkedin.com/feed/"
+              href="#"
               target="blank"
               className=" hover:text-white text-gray-300 transition-all duration-300"
             >
@@ -62,7 +62,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://www.linkedin.com/feed/"
+              href="#"
               target="blank"
               className=" hover:text-white text-gray-300 transition-all duration-300"
             >

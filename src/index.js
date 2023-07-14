@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import App from './App';
 import { store } from './redux/Store';
 import { Provider  } from 'react-redux';
+import firebaseConfig from './firebase.config';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
