@@ -117,9 +117,12 @@ function Cart() {
                   <span className="text-sm font-bold">${totalPrice}</span>
                 </p>
               </div>
-              <button className=" w-full font-poppins font-medium text-sm bg-gradient-to-tr bg-cyan-400  to-cyan-200 border hover:from-cyan-300 hover:to-cyan-500 border-cyan-500 hover:border-cyan-700 active:bg-gradient-to-bl active:from-cyan-400  active:to-cyan-500 duration-200 py-1.5 rounded-md mt-3">
+              <Link to="/pay">
+              <button className=" px-2 w-full font-poppins font-medium text-sm bg-gradient-to-tr bg-cyan-400  to-cyan-200 border hover:from-cyan-300 hover:to-cyan-500 border-cyan-500 hover:border-cyan-700 active:bg-gradient-to-bl active:from-cyan-400  active:to-cyan-500 duration-200 py-1.5 rounded-md mt-3">
                 <span className=" hidden lg:inline-flex"> Proceed to </span> Pay
               </button>
+              </Link>
+            
             </div>
           </div>
         ) : (

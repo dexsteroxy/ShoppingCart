@@ -205,16 +205,6 @@ function Header() {
         {/* =====signin end here====== */}
 
         {/* =====order start here====== */}
-
-        <div className=" hidden lgl:flex flex-col items-start justify-center headerHover">
-          <p className=" text-xs text-lightText font-light">Returns</p>
-          <p className="text-sm font-semibold -mt-1 text-whiteText">& Orders</p>
-        </div>
-
-        {/* =====order end here====== */}
-
-        {/* =====cart start here====== */}
-
         <Link to="/cart">
           <div className=" flex  items-start justify-center headerHover relative">
             <i className="fa-solid fa-cart-shopping"></i>
@@ -227,6 +217,17 @@ function Header() {
             </p>
           </div>
         </Link>
+{/* when the time comes i will on comment it */}
+        {/* <div className=" hidden lgl:flex flex-col items-start justify-center headerHover">
+          <p className=" text-xs text-lightText font-light">Returns</p>
+          <p className="text-sm font-semibold -mt-1 text-whiteText">& Orders</p>
+        </div> */}
+
+        {/* =====order end here====== */}
+
+        {/* =====cart start here====== */}
+
+    
 
         {/* =====cart end here====== */}
       </div>
