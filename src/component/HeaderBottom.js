@@ -40,7 +40,7 @@ function HeaderBottom() {
               transition={{ duration: 0.5 }}
               className=" w-[80%] md:w-[350px]  h-full bg-white border border-black"
             >
-              <div className=" w-full bg-amazon_light text-white py-2 px-6 flex items-center gap-4">
+              <div className=" w-full bg-cyan-700  text-white py-2 px-6 flex items-center gap-4">
                 {userInfo ? (
                   <img
                     className="w-10 h-10 rounded-full"

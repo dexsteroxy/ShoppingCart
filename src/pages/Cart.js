@@ -117,7 +117,7 @@ function Cart() {
                   <span className="text-sm font-bold">${totalPrice}</span>
                 </p>
               </div>
-              <button className=" w-full font-poppins font-medium text-sm bg-gradient-to-tr from-yellow-400 to-yellow-200 border hover:from-yellow-300 hover:to-yellow-500 border-yellow-500 hover:border-yellow-700 active:bg-gradient-to-bl active:from-yellow-400  active:to-yellow-500 duration-200 py-1.5 rounded-md mt-3">
+              <button className=" w-full font-poppins font-medium text-sm bg-gradient-to-tr bg-cyan-400  to-cyan-200 border hover:from-cyan-300 hover:to-cyan-500 border-cyan-500 hover:border-cyan-700 active:bg-gradient-to-bl active:from-cyan-400  active:to-cyan-500 duration-200 py-1.5 rounded-md mt-3">
                 <span className=" hidden lg:inline-flex"> Proceed to </span> Pay
               </button>
             </div>
@@ -146,7 +146,7 @@ function Cart() {
               </p>
              <Link to='/'>
 
-             <button className=" mt-6 bg-yellow-400 rounded-md cursor-pointer hover:bg-yellow-500 active:bg-yellow-700 px-8 py-2 font-poppins font-semibold text-sm">
+             <button className=" mt-6 bg-cyan-500  rounded-md cursor-pointer hover:bg-cyan-600  active:bg-cyan-700   px-8 py-2 font-poppins font-semibold text-sm">
                 Continue Shopping
               </button>
              </Link>

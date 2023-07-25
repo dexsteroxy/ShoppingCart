@@ -5,6 +5,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { RotatingLines } from "react-loader-spinner";
 import { useDispatch } from "react-redux";
 import { setUserInfo } from "../redux/AmazonSlice";
+// https://www.youtube.com/watch?v=7r0UnNFDmAo
 
 function Signin() {
   const dispatch = useDispatch()
@@ -70,7 +71,7 @@ function Signin() {
           if (errorCode.includes("auth/wrong-password")) {
             setUserPassErr("Wrong password! try again");
           }
-          console.log("something is up, try with correct credentials");
+         
         });
       setEmail("");
       setPassword("");
@@ -86,8 +87,8 @@ function Signin() {
             </p>
           </div>
         ) : (
-          <form className="w-[450px] mx-auto flex flex-col items-center">
-            <img className="w-32" src={amazonLogo} alt=""></img>
+          <form className="w-[300px] md:w-[450px] mx-auto flex flex-col items-center">
+            <h1 className=" hidden sml:inline-flex text-4xl font-semibold italic">Dexs<span className="text-cyan-600">tero</span>xy</h1>
             <div className="w-full border border-zinc-200 p-6">
               <h2 className=" font-poppins text-3xl font-medium mb-4">
                 Sign In
@@ -138,7 +139,7 @@ function Signin() {
                 </div>
                 <button
                   onClick={handleLogin}
-                  className=" w-full font-poppins font-medium text-base bg-gradient-to-tr from-yellow-400 to-yellow-200 border hover:from-yellow-300 hover:to-yellow-500 border-yellow-500 hover:border-yellow-700 active:bg-gradient-to-bl active:from-yellow-400 active:to-yellow-500 duration-200 py-1.5 rounded-md mt-3"
+                  className=" w-full font-poppins font-medium text-base bg-gradient-to-tr from-cyan-400 to-cyan-200 border hover:from-cyan-300 hover:to-cyan-500 border-cyan-500 hover:border-cyan-700 active:bg-gradient-to-bl active:from-cyan-400 active:to-cyan-500 duration-200 py-1.5 rounded-md mt-3"
                 >
                   Continue
                 </button>
@@ -169,13 +170,13 @@ function Signin() {
               </p>
             </div>
             <p className=" w-full text-xs text-gray-600 mt-4 flex  items-center">
-              <span className="w-1/3 h-[1px] bg-zinc-400 inline-flex"></span>
-              <span className="w-1/3 text-center">New to Amazon?</span>
-              <span className="w-1/3 h-[1px] bg-zinc-400 inline-flex"></span>
+              <span className="w-1/3 hidden h-[1px] bg-zinc-400 md:inline-flex"></span>
+              <span className=" md:w-1/3 text-center">New to Amazon?</span>
+              <span className="w-1/3 h-[1px] bg-zinc-400 hidden md:inline-flex"></span>
             </p>
             <Link className="w-full" to="/register">
-              <button className=" w-full font-poppins font-normal text-base bg-gradient-to-t from-slate-200 to-slate-100 hover:bg-gradient-to-b border border-zinc-400 active:border-yellow-800 active:shadow-amazonInput duration-200 py-1.5 rounded-sm">
-                Create your Amazon account
+              <button className=" w-52 md:w-full font-poppins font-normal text-base bg-gradient-to-t from-slate-200 to-slate-100 hover:bg-gradient-to-b border border-zinc-400 active:border-yellow-800 active:shadow-amazonInput duration-200 py-1.5 rounded-sm">
+                Create <span className=" hidden md:inline-flex"> your</span> Amazon account
               </button>
             </Link>
           </form>
@@ -183,15 +184,15 @@ function Signin() {
       </div>
       <div className=" w-full bg-gradient-to-t from-white via-white to-zinc-200 flex flex-col gap-4 justify-center items-center py-10">
         <div className="flex items-center gap-6 text-sm">
-          <p className=" text-blue-600 cursor-pointer hover:text-orange-700 hover:underline underline-offset-1">
-            Conditions of Use
+          <p className=" text-blue-600 text-sm cursor-pointer hover:text-orange-700 hover:underline underline-offset-1">
+            Conditions <span className=" hidden md:flex">of Use</span>  
           </p>
-          <p className=" text-blue-600 cursor-pointer hover:text-orange-700 hover:underline underline-offset-1">
-            Privacy Notice{" "}
+          <p className=" text-blue-600 text-sm cursor-pointer hover:text-orange-700 hover:underline underline-offset-1">
+            Privacy <span className=" hidden md:flex">Notice</span> 
           </p>
 
-          <p className=" text-blue-600 cursor-pointer hover:text-orange-700 hover:underline underline-offset-1">
-            Privacy Notice{" "}
+          <p className=" text-blue-600 text-sm cursor-pointer hover:text-orange-700 hover:underline underline-offset-1">
+            Privacy <span className=" hidden md:flex">Notice</span> {" "}
           </p>
         </div>
         <p className="text-xs text-gray-600">

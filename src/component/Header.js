@@ -3,6 +3,7 @@ import amazonLogo from "../assets/amazonLogo.png";
 import HeaderBottom from "./HeaderBottom";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import dexs from '../assets/dexs.avif'
 function Header() {
   const [showAll, setShowAll] = useState(false);
 
@@ -14,8 +15,10 @@ function Header() {
       <div className=" w-full bg-amazon_blue text-white px-4 py-3 flex items-center gap-4">
         {/* =====image start here====== */}
         <Link to="/">
-          <div className=" px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer transition-all duration-300">
-            <img className=" w-24 mt-" src={amazonLogo} alt="logo"></img>
+          <div className=" px-2 h-[80%] flex items-center border border-transparent hover:border-cyan-600 cursor-pointer transition-all duration-300">
+            {/* <img className=" w-24 h-12 " src={amazonLogo} alt="logo"></img> */}
+            <h1 className=" hidden md:inline-flex text-2xl font-bold italic">Dexs<span className="text-cyan-600">tero</span>xy</h1>
+       <h1 className=" md:hidden font-bold">Si<span className=" text-cyan-600">xt</span>us</h1>
           </div>
         </Link>
 
@@ -23,7 +26,7 @@ function Header() {
 
         {/* =====delivering start here====== */}
 
-        <div className=" hidden mdl:inline-flex px-2 h-[80%] items-center border  border-transparent hover:border-white cursor-pointer transition-all duration-300">
+        <div className=" hidden mdl:inline-flex px-2 h-[80%] items-center border  border-transparent hover:border-cyan-600 cursor-pointer transition-all duration-300">
           <i className="fa-solid fa-location-dot"></i>
           <p className=" text-sm text-lightText font-medium flex flex-col">
             {" "}
@@ -166,7 +169,7 @@ function Header() {
             className="h-full text-base text-amazon_blue flex-grow outline-none border-none px-2"
             type="text"
           />
-          <span className="w-12 h-full flex items-center justify-center bg-amazon_yellow hover:bg-[#f3a847] duration-300 transition-all text-amazon_blue cursor-pointer rounded-tr-md rounded-br-md">
+          <span className="w-12 h-full flex items-center justify-center bg-cyan-600 hover:bg-cyan-700 duration-300 transition-all text-amazon_blue cursor-pointer rounded-tr-md rounded-br-md">
             <i className="fa-solid fa-magnifying-glass fa-beat"></i>
           </span>
         </div>
@@ -217,7 +220,7 @@ function Header() {
             <i className="fa-solid fa-cart-shopping"></i>
             <p className=" text-xs font-semibold mt-3 text-whiteText ">
               Cart{" "}
-              <span className=" absolute text-xs top-0 left-6 font-semibold p-1 h-4 bg-[#f3a847] text-amazon_blue rounded-full flex justify-center items-center animate-bounce">
+              <span className=" absolute text-xs top-0 left-6 font-semibold p-1 h-4 bg-cyan-600  text-amazon_blue rounded-full flex justify-center items-center animate-bounce">
                 {" "}
                 {products.length > 0 ? products.length : 0}
               </span>

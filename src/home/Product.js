@@ -13,7 +13,7 @@ const dispatch = useDispatch()
   const productData = data.data;
 
   return (
-    <div className=" max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 2xl:gap-32 xl:gap-6 gap-6 px-4">
+    <div className=" max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-8  gap-6 px-4">
       {productData.map((item) => (
         <div
           key={item.id}
@@ -75,11 +75,11 @@ const dispatch = useDispatch()
             <div>
               <p className="text-sm">{item.description.substring(0, 60)}...</p>
               <div className=" text-yellow-500">
-                <i className="fa-solid fa-star fa-beat"></i>
-                <i className="fa-solid fa-star fa-beat"></i>
-                <i className="fa-solid fa-star fa-beat"></i>
-                <i className="fa-solid fa-star fa-beat"></i>
-                <i className="fa-solid fa-star fa-beat"></i>
+                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
               </div>
             </div>
             <button onClick={()=>dispatch(addToCart({
@@ -90,7 +90,7 @@ const dispatch = useDispatch()
               category:item.category,
               image:item.image,
               quantity:1
-            }))} className=" w-full font-poppins font-medium text-base bg-gradient-to-tr from-yellow-400 to-yellow-200 border hover:from-yellow-300 hover:to-yellow-500 border-yellow-500 hover:border-yellow-700 active:bg-gradient-to-bl active:from-yellow-400 active:to-yellow-500 duration-200 py-1.5 rounded-md mt-3">
+            }))} className=" w-full font-poppins font-medium text-base bg-gradient-to-tr bg-cyan-400 border hover:from-cyan-300 hover:to-cyan-700 border-cyan-500 hover:border-cyan-800 active:bg-gradient-to-bl active:from-cyan-400 active:to-cyan-500 duration-200 py-1.5 rounded-md mt-3">
               Add to Cart
             </button>
           </div>

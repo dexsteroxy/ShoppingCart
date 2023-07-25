@@ -58,7 +58,7 @@ function Register() {
   const handleRegistration = (e) => {
     e.preventDefault();
     if (!clientName) {
-      setErrClientName("Your Name Is Required ");
+      setErrClientName("Your name Is Required ");
     }
     if (!email) {
       setErrEmail("Email is required");
@@ -99,7 +99,7 @@ function Register() {
         .then((userCredential) => {
           updateProfile(auth.currentUser, {
             displayName: clientName,
-            photoURL: "7515495b-982d-44d2-9931-5a8bbbf27532",
+            // photoURL: {amazonLogo},
           });
           //signed in
           const user = userCredential.user;
@@ -118,7 +118,7 @@ function Register() {
           }
           //...
         });
-      // ==============firebase end here==================
+      // ============== firebase end here ==================
       setClientName("");
       setEmail("");
       setPassword("");
@@ -131,8 +131,8 @@ function Register() {
   return (
     <div className=" w-full">
       <div className=" w-full bg-gray-100 pb-10">
-        <form className="w-[450px] mx-auto flex flex-col items-center">
-          <img className="w-32" src={amazonLogo} alt=""></img>
+        <form className="md:w-[450px] w-[300px] mx-auto flex flex-col items-center">
+        <h1 className=" hidden sml:inline-flex text-4xl font-semibold italic">Dexs<span className="text-cyan-600">tero</span>xy</h1>
           <div className="w-full border border-zinc-200 p-6">
             <h2 className=" font-poppins text-2xl font-medium mb-4">
               Create Account
@@ -144,7 +144,7 @@ function Register() {
                   onChange={handleName}
                   value={clientName}
                   type="text"
-                  className=" w-full  py-1 border border-zinc-400 px-2 text-base rounded-sm outline-none focus-within:border-[#e77600] focus-within:shadow-amazonInput duration-100"
+                  className=" w-full  py-1 border border-zinc-400 px-2 text-base rounded-sm outline-none focus-within:border-cyan-600 focus-within:shadow-amazonInput duration-100"
                 />
                 {errClientName && (
                   <p className=" text-red-600 text-xs font-semibold tracking-wide flex items-center gap-2 -mt-1.5">
@@ -160,7 +160,7 @@ function Register() {
                   onChange={handleEmail}
                   value={email}
                   type="email"
-                  className=" w-full  py-1 border border-zinc-400 px-2 text-base rounded-sm outline-none focus-within:border-[#e77600] focus-within:shadow-amazonInput duration-100"
+                  className=" w-full  py-1 border border-zinc-400 px-2 text-base rounded-sm outline-none focus-within:border-cyan-600 focus-within:shadow-amazonInput duration-100"
                 />
                 {errEmail && (
                   <p className=" text-red-600 text-xs font-semibold tracking-wide flex items-center gap-2 -mt-1.5">
@@ -181,7 +181,7 @@ function Register() {
                   onChange={handlePassword}
                   value={password}
                   type="password"
-                  className=" w-full  py-1 border border-zinc-400 px-2 text-base rounded-sm outline-none focus-within:border-[#e77600] focus-within:shadow-amazonInput duration-100"
+                  className=" w-full  py-1 border border-zinc-400 px-2 text-base rounded-sm outline-none focus-within:border-cyan-600 focus-within:shadow-amazonInput duration-100"
                 />
                 {errPassword && (
                   <p className=" text-red-600 text-xs font-semibold tracking-wide flex items-center gap-2 -mt-1.5">
@@ -196,7 +196,7 @@ function Register() {
                   onChange={handleCPassword}
                   value={cpassword}
                   type="password"
-                  className=" w-full  py-1 border border-zinc-400 px-2 text-base rounded-sm outline-none focus-within:border-[#e77600] focus-within:shadow-amazonInput duration-100"
+                  className=" w-full  py-1 border border-zinc-400 px-2 text-base rounded-sm outline-none focus-within:border-cyan-600 focus-within:shadow-amazonInput duration-100"
                 />
                 {errCPassword && (
                   <p className=" text-red-600 text-xs font-semibold tracking-wide flex items-center gap-2 -mt-1.5">
@@ -209,7 +209,7 @@ function Register() {
               </div>
               <button
                 onClick={handleRegistration}
-                className=" w-full font-poppins font-medium text-base bg-gradient-to-tr from-yellow-400 to-yellow-200 border hover:from-yellow-300 hover:to-yellow-500 border-yellow-500 hover:border-yellow-700 active:bg-gradient-to-bl active:from-yellow-400 active:to-yellow-500 duration-200 py-1.5 rounded-md mt-3"
+                className=" w-full font-poppins font-medium text-base bg-gradient-to-tr from-cyan-400 to-cyan-200 border hover:from-cyan-300 hover:to-cyan-500 border-cyan-500 hover:border-cyan-700 active:bg-gradient-to-bl active:from-cyan-400 active:to-cyan-500 duration-200 py-1.5 rounded-md mt-3"
               >
                 Continue
               </button>
