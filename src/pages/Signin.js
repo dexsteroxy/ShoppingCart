@@ -1,12 +1,18 @@
 import React, { useState } from "react";
-import amazonLogo from "../assets/amazonLogo.png";
+
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { RotatingLines } from "react-loader-spinner";
 import { useDispatch } from "react-redux";
 import { setUserInfo } from "../redux/AmazonSlice";
 // https://www.youtube.com/watch?v=7r0UnNFDmAo
+// https://www.youtube.com/watch?v=A_LYucsJPsk
 
+//boss chick https://www.youtube.com/watch?v=4sKi9iG0JuA
+
+
+
+//tutorial on useState Hooks== https://www.youtube.com/watch?v=iBfr6eOcCMg
 function Signin() {
   const dispatch = useDispatch()
   const auth = getAuth();

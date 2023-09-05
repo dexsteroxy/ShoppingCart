@@ -7,7 +7,7 @@ import FooterTop from "./FooterTop";
 function Footer() {
   return (
     <div>
-    <FooterTop/>
+    
     <footer className=" bg-amazon_blue">
       <div className="md:container mt-4 pt-16 flex flex-col-reverse justify-between md:px-6 px-3 py-10 md:mx-auto space-y-8 md:flex-row md:space-y-0">
         <div className="flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:space-y-0 md:items-start">

@@ -38,7 +38,7 @@
 //             justifyContent: "space-between",
 //           }}
 //         >
-          
+
 //           {dots}
 //         </ul>
 //       </div>
@@ -46,10 +46,10 @@
 //     customPaging: (i) => (
 //       <div
 //         style={
-//             i === dotActive 
-             
+//             i === dotActive
+
 //             ?{
-           
+
 //                 width:"30px",
 //                 height:"30px",
 //                 borderRadius:"50%",
@@ -61,8 +61,7 @@
 //                 padding:"8px 0",
 //                 cursor:"pointer",
 //                 border:"1px solid #f3a847"
-            
-      
+
 //         }
 //         :{
 //             width:"30px",
@@ -118,27 +117,26 @@
 
 // export default Banner;
 
-
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState } from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import pair from "../assets/pair.webp";
- import headphone from "../assets/headphone.webp";
- import laptop from "../assets/laptop.webp";
- import cloth from "../assets/image2.jpg";
- import phone from "../assets/phone.webp";
- import shoes from "../assets/shoes.jpg";
+import headphone from "../assets/headphone.webp";
+import laptop from "../assets/laptop.webp";
+import cloth from "../assets/image2.jpg";
+import phone from "../assets/phone.webp";
+import shoes from "../assets/shoes.jpg";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 // import './styles.css';
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 export default function App() {
   return (
@@ -157,29 +155,39 @@ export default function App() {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>  <div className=' w-full h-96 flex items-center justify-center mx-auto'>
-           <img className="w-full h-96" src={headphone} alt="bags"></img>
-           </div> </SwiperSlide>
+        <SwiperSlide>
           
+          <div className=" w-full h-96 flex items-center justify-center mx-auto">
+            <img className="w-full h-96" src={headphone} alt="bags"></img>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
           
-        <SwiperSlide> <div className=' flex items-center justify-center mx-auto'>
+          <div className=" flex items-center justify-center mx-auto">
             <img className="w-full h-96 " src={pair} alt="bags"></img>
-           </div></SwiperSlide>
-        <SwiperSlide> <div className='w-full h-96 flex items-center justify-center mx-auto'>
-           <img className="w-full h-96" src={phone} alt="bags"></img>
-         </div></SwiperSlide>
-         <SwiperSlide> <div className='w-full h-96 flex items-center justify-center mx-auto'>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+        
+          <div className="w-full h-96 flex items-center justify-center mx-auto">
+            <img className="w-full h-96" src={phone} alt="bags"></img>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          
+          <div className="w-full h-96 flex items-center justify-center mx-auto">
             <img className="w-full h-96 " src={cloth} alt="bags"></img>
-           </div></SwiperSlide>
+          </div>
+        </SwiperSlide>
 
-
-           <SwiperSlide> <div className='w-full h-96 flex items-center justify-center mx-auto'>
+        <SwiperSlide>
+          
+          <div className="w-full h-96 flex items-center justify-center mx-auto">
             <img className="w-full h-96 " src={shoes} alt="bags"></img>
-           </div></SwiperSlide>
-
-           
+          </div>
+        </SwiperSlide>
       </Swiper>
-      
     </>
   );
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import { useDispatch} from "react-redux"
 import { addToCart } from "../redux/AmazonSlice";
+import { isAxiosError } from "axios";
 
 
 function Product() {
@@ -90,7 +91,7 @@ const dispatch = useDispatch()
               category:item.category,
               image:item.image,
               quantity:1
-            }))} className=" w-full font-poppins font-medium text-base bg-gradient-to-tr bg-cyan-400 border hover:from-cyan-300 hover:to-cyan-700 border-cyan-500 hover:border-cyan-800 active:bg-gradient-to-bl active:from-cyan-400 active:to-cyan-500 duration-200 py-1.5 rounded-md mt-3">
+            }))} className=" w-full font-poppins font-medium text-base bg-amazon_light text-white py-1.5 rounded-md mt-3">
               Add to Cart
             </button>
           </div>
